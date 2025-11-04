@@ -66,7 +66,7 @@ function handleMessages(message, sender, sendResponse) {
 	try{
 		if(message['type'] == "credentials"){ 
 			const username = message['username'];
-			const password = message['password']; 
+			const password = message['password'];
 
 			const mainInterval = setInterval(() => {	
 				try{
@@ -90,7 +90,7 @@ function handleMessages(message, sender, sendResponse) {
 
 									var myp5 = new p5(s);
 									password_input.setAttribute("readonly", true);
-									password.style.filter = "blur(5px)";															
+									password_input.style.filter = "blur(5px)";															
 									password_input.value = password;
 									password_input.dispatchEvent(new Event("input", { bubbles: true, cancelable: true }));
 								}

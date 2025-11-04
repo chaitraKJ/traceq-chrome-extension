@@ -1,5 +1,18 @@
 console.log("TraceQ extension running");
 
+function get_site_url(){
+	const origin = window.location.origin;
+	let url = "";
+	if(origin.includes("localhost")){
+		const folder = window.location.pathname.split("/")[1];
+		url = `${origin}/${folder}/ad-get-application-information`;
+	}
+	else{
+		url = `${origin}/ad-get-application-information`;
+	}
+	return url;
+}
+
 function attach_event(){
 	try{
 		const list_data = document.getElementById('list_data');
@@ -24,7 +37,8 @@ async function handle_click(event){
 				type: "app_data",
 				tab: "NEW",
 				session: "PERSISTENT",
-				application_id: app.dataset.appid
+				application_id: app.dataset.appid,
+				site_url: get_site_url()
 			}
 			await chrome.runtime.sendMessage(message);
 		}
