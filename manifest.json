@@ -1,0 +1,78 @@
+{
+	"manifest_version": 3,
+	"name": "Traceq-chrome-extension",
+	"description": "Protects Passwords",
+	"version": "1.0",
+	"icons": {
+		"16": "images/icons8-security-configuration-16.png",
+		"32": "images/icons8-security-configuration-32.png",
+		"48": "images/icons8-security-configuration-48.png",
+		"128": "images/icons8-security-configuration-100.png"
+	},
+	"permissions": [
+		"tabs",
+		"activeTab",
+		"scripting",
+		"privacy",
+		"storage"
+	],
+	"host_permissions": [
+		"https://www.doxpop.com/*",
+		"https://tapestry.fidlar.com/*",
+		"https://ecclix.com/*",
+		"https://eclerksla.com/*",
+		"https://www.titlepoint.com/*",
+		"https://fnfgeneral.okta.com/*",
+		"https://www.idocmarket.com/*",
+		"https://icounty.org/*",
+		"https://psearch.syscononline.com/*"
+	],
+	"background": {
+		"service_worker": "background/background.js"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"http://localhost/traceqlabs2024-home/ad-orders?*",
+				"http://localhost/traceqlabs2024-home/ad-orders/*"
+			],
+			"js": ["appScripts/index.js"]
+		},
+		{
+			"matches": ["https://www.doxpop.com/prod/in/*"],
+			"js": ["scripts/p5.js", "scripts/wscripts/doxpop.js"]
+		},
+		{
+			"matches": ["https://tapestry.fidlar.com/tapestry2/Default.aspx"],
+			"js": ["scripts/p5.js", "scripts/wscripts/tapestry.js"]
+		},
+		{
+			"matches": ["https://ecclix.com/ecclix/login.aspx"],
+			"js": ["scripts/p5.js", "scripts/wscripts/ecclix.js"]
+		},
+		{
+			"matches": ["https://eclerksla.com/home/login"],
+			"js": ["scripts/p5.js", "scripts/wscripts/eclerksla.js"]
+		},
+		{
+			"matches": ["https://www.titlepoint.com/TitlePoint/Login.aspx"],
+			"js": ["scripts/p5.js", "scripts/wscripts/titlepoint.js"]
+		},
+		{
+			"matches": ["https://fnfgeneral.okta.com/oauth2/*"],
+			"js": ["scripts/p5.js", "scripts/wscripts/titlepoint_login.js"]
+		},
+		{
+			"matches": ["https://www.idocmarket.com/Security/Register"],
+			"js": ["scripts/p5.js", "scripts/wscripts/idocmarket.js"]
+		},
+		{
+			"matches": ["https://icounty.org/Websearch/"],
+			"js": ["scripts/p5.js", "scripts/wscripts/icounty.js"]
+		},
+		{
+			"matches": ["https://psearch.syscononline.com/user/login"],
+			"js": ["scripts/p5.js", "scripts/wscripts/syscon.js"]
+		}
+	]
+}
