@@ -25,7 +25,7 @@ var s = function (sketch){
 			sketch.clear();
 			const coords = password.getBoundingClientRect();
 			const x1 = coords.left + window.scrollX;
-			const y1 = coords.top + window.scrollY + 10;
+			const y1 = coords.top + window.scrollY + 15;
 			const x2 = x1 + coords.width;
 
 			sketch.stroke(0);

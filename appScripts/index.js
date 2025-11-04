@@ -35,6 +35,7 @@ async function handle_click(event){
 }
 
 let interval = null;
+attach_event();
 interval = setInterval(() => {
 	try{
 		const list_data = document.getElementById('list_data');
