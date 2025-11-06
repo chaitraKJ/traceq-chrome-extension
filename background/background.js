@@ -30,7 +30,7 @@ async function handleMessages(message, sender, sendResponse) {
 
 			// FETCH THE APPLICATION INFO	
 			let application_id = message.application_id;
-			SITE_URL = message.site_url ? message.site_url : SITE_URL;
+			SITE_URL = message.site_url ? message.site_url : SITE_URL; console.log(SITE_URL);
 
 			if(application_id && SITE_URL){ console.log(SITE_URL);
 				const form = new FormData();

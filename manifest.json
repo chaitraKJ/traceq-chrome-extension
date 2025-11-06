@@ -17,6 +17,7 @@
 		"storage"
 	],
 	"host_permissions": [
+		"https://traceqlabs.com/*",
 		"https://www.doxpop.com/*",
 		"https://tapestry.fidlar.com/*",
 		"https://ecclix.com/*",
@@ -34,7 +35,9 @@
 		{
 			"matches": [
 				"http://localhost/traceqlabs2024-home/ad-orders?*",
-				"http://localhost/traceqlabs2024-home/ad-orders/*"
+				"http://localhost/traceqlabs2024-home/ad-orders/*",
+				"https://traceqlabs.com/ad-orders?*",
+				"https://traceqlabs.com/ad-orders/*"
 			],
 			"js": ["appScripts/index.js"]
 		},
