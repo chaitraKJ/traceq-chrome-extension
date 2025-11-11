@@ -10,7 +10,7 @@ async function handleMessages(message, sender, sendResponse) {
 		// SET THE PASSWORD SAVING TO FALSE
 		chrome.privacy.services.passwordSavingEnabled.get({}, function(details) {
 			try{
-				if (details.levelOfControl === 'controlled_by_this_extension') {
+				if (details.levelOfControl === 'controlled_by_this_extension' || details.levelOfControl == 'controllable_by_this_extension') {
 					chrome.privacy.services.passwordSavingEnabled.set({ value: false }, function() {
 						if (chrome.runtime.lastError === undefined) {
 							console.log("Password storing is set to FALSE");
@@ -18,6 +18,9 @@ async function handleMessages(message, sender, sendResponse) {
 							console.log("Sadness!", chrome.runtime.lastError);
 						}
 					});
+				}
+				else{
+					console.log(details.levelOfControl);
 				}
 			}
 			catch(error){
