@@ -35,7 +35,7 @@ async function handleMessages(message, sender, sendResponse) {
 			let application_id = message.application_id;
 			SITE_URL = message.site_url ? message.site_url : SITE_URL;
 
-			if(application_id && SITE_URL){ console.log(SITE_URL);
+			if(application_id && SITE_URL){
 				const form = new FormData();
 				form.append("application_id", application_id);
 				const response = await fetch(SITE_URL, {

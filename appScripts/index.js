@@ -4,8 +4,9 @@ function get_site_url(){
 	const origin = window.location.origin;
 	let url = "";
 	if(origin.includes("localhost")){
-		const folder = window.location.pathname.split("/")[1];
-		url = `${origin}/${folder}/ad-get-application-information`;
+		const main_folder = window.location.pathname.split("/")[1];
+		const sub_folder = window.location.pathname.split("/")[2];
+		url = `${origin}/${main_folder}/${sub_folder}/ad-get-application-information`;
 	}
 	else{
 		url = `${origin}/ad-get-application-information`;

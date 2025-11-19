@@ -35,8 +35,8 @@
     "content_scripts": [
         {
             "matches": [
-                "http://localhost/traceqlabs2024-home/ad-orders?*",
-                "http://localhost/traceqlabs2024-home/ad-orders/*",
+                "http://localhost/traceq-task/traceqlabs-credential-masking/ad-orders?*",
+                "http://localhost/traceq-task/traceqlabs-credential-masking/ad-orders/*",
                 "https://traceqlabs.com/ad-orders?*",
                 "https://traceqlabs.com/ad-orders/*"
             ],
